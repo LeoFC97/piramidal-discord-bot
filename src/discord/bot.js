@@ -27,7 +27,7 @@ async function handleCommand(command, args, message){
             message.channel.send('Pong!');
             break;
         case 'help':
-            message.channel.send('Avaiable commands: !token {token name}\n !coin {coin name}\n Examples: \n !token bcoin \n !coin brl ');
+            message.channel.send('Avaiable commands: !coin {coin name}\n Examples: \n !coin bcoin  ');
             break;
         case 'coin':
             const coinPrice = await handleCoin(args);
