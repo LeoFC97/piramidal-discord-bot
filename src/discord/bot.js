@@ -31,6 +31,10 @@ async function handleCommand(command, args, message){
             break;
         case 'coin':
             const coinPrice = await handleCoin(args);
+            if(coinPrice === 'Coin not found'){
+                message.channel.send(coinPrice);
+                break;
+            }
             const messageFormated = formatMessage(coinPrice, args);
             message.channel.send('' + messageFormated);
             break;
@@ -42,9 +46,7 @@ async function handleCommand(command, args, message){
 
 async function handleCoin(coin){
     const coinPrice = await getCoinPrice(coin);
-    console.log(`coinPrice`);
     console.log(coinPrice);
-    console.log('coinPrice');
     if(!coinPrice){
         return 'Coin not found';
     }

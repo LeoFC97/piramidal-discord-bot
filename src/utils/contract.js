@@ -2,7 +2,11 @@ const { listOfContracts } = require('./constants');
 
 module.exports={
     getContactByCoinName: (coinName) => {
-        const found = listOfContracts.find(contract => contract.coin == coinName);
-        return found.contractAddress;
+        try {
+            const found = listOfContracts.find(contract => contract.coin == coinName);
+            return found;
+        } catch (error) {
+            return false;
+        }
     }
 }

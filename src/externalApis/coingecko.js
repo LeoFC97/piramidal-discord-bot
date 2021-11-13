@@ -6,7 +6,9 @@ const { getContactByCoinName }  = require('../utils/contract')
 module.exports={
   async getCoinPrice(coin, currencies=['usd','brl']){
     const contract = getContactByCoinName(coin)
-    console.log(contract);
+    if(!contract){
+      return false;
+    }
     const htmlParsed = await axios.get(
         `${coingecko.baseUrl}/simple/token_price/binance-smart-chain/?contract_addresses=${contract}&vs_currencies=${currencies}`
     ).then((response) => {
