@@ -1,0 +1,29 @@
+{
+  "name": "piramidal-discord-bot",
+  "version": "1.0.0",
+  "description": "botzinho pro discord, é sobre isto",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoFC97/piramidal-discord-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoFC97/piramidal-discord-bot/issues"
+  },
+  "homepage": "https://github.com/LeoFC97/piramidal-discord-bot#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
