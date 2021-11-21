@@ -39,10 +39,8 @@ async function handleCoinListCache(client) {
 async function handleCommand(command, args, message, client){
     const [coinSymbol] = args;
 
-    const rawCoinList = await client.channels.cache.get('coins');
-    
-    const coinList = rawCoinList.data;
-    
+    const coinList = await client.channels.cache.get('coins');
+        
     switch(command){
         case 'ping':
             message.channel.send('Pong!');

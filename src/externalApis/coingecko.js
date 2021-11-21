@@ -2,8 +2,9 @@ const axios = require('axios')
 const { coingecko } = require('../config/enviroment')
 
 module.exports={
-  getCoinList() {
-    return axios.get(`${coingecko.baseUrl}/coins/list`);
+  async getCoinList() {
+    const response = await axios.get(`${coingecko.baseUrl}/coins/list`)
+    return response.data
   },
 
   getCoinInCoinList(symbol, coinList) {
